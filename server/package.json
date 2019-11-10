@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A minimal backend server for a rudimentary hash-based deepfake detection chrome extension",
+  "main": "server.js",
+  "dependencies": {
+    "better-sqlite3": "^5.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-mongo-db": "^2.0.4",
+    "image-hash": "^3.5.1",
+    "mongodb": "^3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/viitana/antideepfake"
+  },
+  "author": "Atte Viitanen",
+  "license": "MIT"
+}

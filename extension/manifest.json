@@ -1,7 +1,7 @@
 {
   "name": "antideepfake",
   "version": "1.0",
-  "description": "Chrome browser extension for simple hash-baseddeepfake detection and alerting",
+  "description": "Chrome browser extension for simple hash-based deepfake detection and alerting",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "background": {
     "scripts": ["loader.js"],
@@ -12,7 +12,7 @@
       "matches": ["<all_urls>"],
       "run_at": "document_idle",
       "all_frames": true,
-      "js": ["md5.js", "detection.js"]
+      "js": ["detection.js"]
     }
   ],
   "manifest_version": 2
