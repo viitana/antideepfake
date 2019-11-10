@@ -1,5 +1,5 @@
 # antideepfake
-A very rudimentary hash-based deepfake detection chrome browser extension & [Express.js](https://github.com/expressjs/express) server combo.
+A very rudimentary hash-based deepfake detection chrome browser extension. Comprises of the extension itself and an [Express.js](https://github.com/expressjs/express) database server.
 
 Uses [image-hash](https://github.com/danm/image-hash) (which in turn uses [blockhash-js](https://github.com/commonsmachinery/blockhash-js)) for perceptual hash generation.
 
