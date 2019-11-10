@@ -12,6 +12,6 @@ for(var i = 0; i < images.length; i++) {
       xhr.open('POST', data.target_url, true);
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send(JSON.stringify({ image_source: src }));
-      console.log('Sent query for img ' + src);
+      console.log('Sent query for img ' + src); // TODO: remove debug console logging
     });
 }
