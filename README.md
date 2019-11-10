@@ -12,7 +12,7 @@ The application is intended for demo purposes only depends on an existing databa
 ## Installation
 For intallation instructions, refer to the READMEs in the folders for the respective components:
 - [Chrome extension](/extension#readme)
-- [Backend hash server](/extension#readme)
+- [Backend hash server](/server#readme)
 
 ## License
 [MIT](/LICENSE)
