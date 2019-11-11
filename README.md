@@ -5,9 +5,9 @@ Uses [image-hash](https://github.com/danm/image-hash) (which in turn uses [block
 
 ## Basic functionality
 
-The browser extension queries the server for all image tag source URIs on a page. The server fetches the images and performs a perceptual hash, checks a simple sqlite database for matches and returns the result.
+The browser extension queries the server for all image tag source URIs on a page. The server fetches the images and performs a perceptual hash, checks a simple sqlite database for matches and returns the result. The extension then applies a warning overlay on the images.
 
-The application is intended for demo purposes only depends on an existing database of known deepfake content to function in a real-life setting.
+This application is intended for demo purposes only and depends on an existing database of known deepfake content to function in a real-life setting.
 
 ## Installation
 For intallation instructions, refer to the READMEs in the folders for the respective components:
