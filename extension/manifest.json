@@ -12,7 +12,8 @@
       "matches": ["<all_urls>"],
       "run_at": "document_idle",
       "all_frames": true,
-      "js": ["detection.js"]
+      "js": ["detection.js"],
+      "css": ["alerts.css"]
     }
   ],
   "manifest_version": 2

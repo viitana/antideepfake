@@ -39,7 +39,7 @@ app.post('/processimg', (req, res) => {
             res.status(400).send('Unable to hash image');
             return;
         }
-        res.json({ result: db.hasHash(data), hash: data });
+        res.json({ result: db.hasHash(data), hash: data, src: url });
     });
 });
 

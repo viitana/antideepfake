@@ -1,0 +1,6 @@
+div.deepfakeoverlay {
+    display: inline-block;
+    position: absolute;
+    background-color: red;
+    opacity: 50%;
+}
