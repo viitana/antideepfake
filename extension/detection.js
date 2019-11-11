@@ -13,8 +13,6 @@ const scan = () => {
       : [elem];
   }
 
-  console.log(imgs);
-
   // Send query server for each
   const srcs = Object.keys(imgs);
   for(const src of srcs) {
@@ -57,5 +55,7 @@ const addAlert = elems => {
   }
 }
 
-// Run when resources are fully loaded
-window.addEventListener ("load", scan, false);
+// Run when resources are fully loaded & plugin is enabled
+chrome.storage.sync.get('enabled', data => {
+  if(data.enabled) window.addEventListener ("load", scan, false);
+});

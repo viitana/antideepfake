@@ -39,7 +39,9 @@ app.post('/processimg', (req, res) => {
             res.status(400).send('Unable to hash image');
             return;
         }
-        res.json({ result: db.hasHash(data), hash: data, src: url });
+        const result = db.hasHash(data);
+        console.log(`Successfully hashed ${url}: ${result ? 'match!' : 'no match'}`);
+        res.json({ result: result, hash: data, src: url });
     });
 });
 
