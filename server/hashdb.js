@@ -14,7 +14,7 @@ const insertsPath = './test_insert.sql';
 */
 module.exports = class HashDB {
   constructor (path, insertTests = false) {
-    const existed = fs.readFileSync(path, 'utf8');
+    const existed = fs.existsSync(path, 'utf8');
     this.db = new db(path);
     this.runFile(initPath);
     this.getQ = this.db.prepare('SELECT * FROM img_hash WHERE hash = ?');

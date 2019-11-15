@@ -40,7 +40,7 @@ app.post('/processimg', (req, res) => {
             return;
         }
         const result = db.hasHash(data);
-        console.log(`Successfully hashed ${url}: ${result ? 'match!' : 'no match'}`);
+        console.log(`Successfully hashed ${url}: ${result ? 'match!' : 'no match'} (${data})`);
         res.json({ result: result, hash: data, src: url });
     });
 });
