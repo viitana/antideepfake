@@ -2,5 +2,9 @@ div.deepfakeoverlay {
     display: inline-block;
     position: absolute;
     background-color: red;
-    opacity: 50%;
+    opacity: 80%;
+    padding-left: 10px;
+    line-height: 30px;
+    transition: height 0.8s;
+    overflow: hidden;
 }

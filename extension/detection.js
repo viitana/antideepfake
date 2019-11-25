@@ -41,18 +41,46 @@ const handleResponse = (responseStr, mapping) => {
 
 // Add overlay to given elements
 const addAlert = elems => {
+  let idCount = 1;
   for(const elem of elems) {
     const overlay = document.createElement("div");
     overlay.classList.add("deepfakeoverlay");
 
     overlay.style.cssText = elem.style.cssText;
-    overlay.style.top = elem.offsetTop;
-    overlay.style.left = elem.offsetLeft;
-    overlay.style.width = `${elem.clientWidth ? elem.clientWidth : elem.naturalWidthpx}px`;
-    overlay.style.height = `${elem.clientHeight ? elem.clientHeight : elem.naturalHeight}px`;
+    //overlay.style.top = elem.offsetTop;
+    //overlay.style.left = elem.offsetLeft;
+    overlay.style.width = `${elem.clientWidth ? elem.clientWidth - 10 : elem.naturalWidth - 10}px`;
+    //overlay.style.height = `${elem.clientHeight ? elem.clientHeight : elem.naturalHeight}px`;
+    overlay.style.height = "0px";
+
+    const boldedText = document.createElement("b");
+    boldedText.appendChild(document.createTextNode("Warning: "));
+
+    const deepfakeText = document.createTextNode("potential deepfake");
+
+    const closeButton = document.createElement("span");
+    closeButton.style.paddingRight = "10px";
+    closeButton.style.float = "right";
+    closeButton.style.cursor = "pointer";
+    closeButton.appendChild(document.createTextNode("x"));
+    closeButton.id = `df-close-${idCount}`;
+    closeButton.onclick = function() {closeBanner(idCount)};
+
+    overlay.appendChild(boldedText);
+    overlay.appendChild(deepfakeText);
+    overlay.appendChild(closeButton);
 
     elem.parentNode.insertBefore(overlay, elem);
+
+    setTimeout(() => {
+      overlay.style.height = "30px"; //animate slide-in
+    }, 0);
+
   }
+}
+
+const closeBanner = (bannerID) => {
+  document.getElementById(`df-close-${bannerID}`).parentNode.style.height = "0px";
 }
 
 // Run when resources are fully loaded & plugin is enabled
