@@ -7,12 +7,17 @@ div.deepfakeoverlay {
     display: inline-block;
     position: absolute;
     background-color: red;
-    opacity: 80%;
+    opacity: 70%;
     padding-left: 10px;
     line-height: 40px;
-    transition: height 0.8s;
+    transition: height 0.8s, opacity .7s, background-color .7s;
     overflow: hidden;
     user-select: none;
+}
+
+div.deepfakeoverlay:hover {
+    background-color: rgb(255,25,25);
+    opacity: 95%;
 }
 
 .deepfakeoverlay-close {
