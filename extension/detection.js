@@ -83,7 +83,10 @@ const closeBanner = (bannerID) => {
   document.getElementById(`df-close-${bannerID}`).parentNode.style.height = "0px";
 }
 
-// Run when resources are fully loaded & plugin is enabled
-chrome.storage.sync.get('enabled', data => {
-  if(data.enabled) window.addEventListener ("load", scan, false);
-});
+window.addEventListener ("load", runScan, false);
+
+const runScan = () => {
+  chrome.storage.sync.get('enabled', data => {
+    if (data.enabled) scan();
+  });
+}
