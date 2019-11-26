@@ -83,10 +83,10 @@ const closeBanner = (bannerID) => {
   document.getElementById(`df-close-${bannerID}`).parentNode.style.height = "0px";
 }
 
-window.addEventListener ("load", runScan, false);
-
 const runScan = () => {
   chrome.storage.sync.get('enabled', data => {
     if (data.enabled) scan();
   });
 }
+
+window.addEventListener ("load", runScan, false);
