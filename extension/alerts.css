@@ -1,10 +1,26 @@
 div.deepfakeoverlay {
+    font-family: 'Roboto';
+    color: white;
+    user-select: none;
+    font-weight: bold;
+
     display: inline-block;
     position: absolute;
     background-color: red;
     opacity: 80%;
     padding-left: 10px;
-    line-height: 30px;
+    line-height: 40px;
     transition: height 0.8s;
     overflow: hidden;
+    user-select: none;
+}
+
+.deepfakeoverlay-close {
+    padding-right: 12px;
+    float: right;
+    text-decoration: underline;
+}
+
+.deepfakeoverlay-close:hover {
+    color: rgba(255,255,255, 0.7);
 }

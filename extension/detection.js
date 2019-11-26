@@ -41,30 +41,25 @@ const handleResponse = (responseStr, mapping) => {
 
 // Add overlay to given elements
 const addAlert = elems => {
-  let idCount = 1;
   for(const elem of elems) {
     const overlay = document.createElement("div");
     overlay.classList.add("deepfakeoverlay");
 
     overlay.style.cssText = elem.style.cssText;
-    //overlay.style.top = elem.offsetTop;
-    //overlay.style.left = elem.offsetLeft;
     overlay.style.width = `${elem.clientWidth ? elem.clientWidth - 10 : elem.naturalWidth - 10}px`;
-    //overlay.style.height = `${elem.clientHeight ? elem.clientHeight : elem.naturalHeight}px`;
     overlay.style.height = "0px";
 
-    const boldedText = document.createElement("b");
-    boldedText.appendChild(document.createTextNode("Warning: "));
+    const boldedText = document.createElement("span");
+    boldedText.style.paddingLeft = "5px"
+    boldedText.appendChild(document.createTextNode("Warning"));
+    boldedText.style.textDecoration = "underline";
 
-    const deepfakeText = document.createTextNode("potential deepfake");
+    const deepfakeText = document.createTextNode(": potential deepfake");
 
     const closeButton = document.createElement("span");
-    closeButton.style.paddingRight = "10px";
-    closeButton.style.float = "right";
-    closeButton.style.cursor = "pointer";
-    closeButton.appendChild(document.createTextNode("x"));
-    closeButton.id = `df-close-${idCount}`;
-    closeButton.onclick = function() {closeBanner(idCount)};
+    closeButton.classList.add("deepfakeoverlay-close");
+    closeButton.appendChild(document.createTextNode("Ignore"));
+    closeButton.onclick = () => closeButton.parentNode.style.height = "0px";
 
     overlay.appendChild(boldedText);
     overlay.appendChild(deepfakeText);
@@ -73,14 +68,10 @@ const addAlert = elems => {
     elem.parentNode.insertBefore(overlay, elem);
 
     setTimeout(() => {
-      overlay.style.height = "30px"; //animate slide-in
+      overlay.style.height = "40px"; //animate slide-in
     }, 0);
 
   }
-}
-
-const closeBanner = (bannerID) => {
-  document.getElementById(`df-close-${bannerID}`).parentNode.style.height = "0px";
 }
 
 const runScan = () => {
